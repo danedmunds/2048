@@ -12,51 +12,12 @@ public class TwentyFortyEight {
 
 	private static final int NO_VALUE = -1;
 
-	private static class PointIterator implements Iterator<Point> {
-
-		@Override
-		public boolean hasNext() {
-			// TODO Auto-generated method stub
-			return false;
-		}
-
-		@Override
-		public Point next() {
-			// TODO Auto-generated method stub
-			return null;
-		}
-
-		@Override
-		public void remove() {
-			throw new UnsupportedOperationException();
-		}
-	}
 
 	private enum Direction {
-		Up(0, -1) {
-			@Override
-			protected Iterator<Point> traversalIterator(int width, int height) {
-				return null;
-			}
-		},
-		Down(0, 1) {
-			@Override
-			protected Iterator<Point> traversalIterator(int width, int height) {
-				return null;
-			}
-		},
-		Right(1, 0) {
-			@Override
-			protected Iterator<Point> traversalIterator(int width, int height) {
-				return null;
-			}
-		},
-		Left(-1, 0) {
-			@Override
-			protected Iterator<Point> traversalIterator(int width, int height) {
-				return null;
-			}
-		};
+		Up(0, -1),
+		Down(0, 1),
+		Right(1, 0),
+		Left(-1, 0);
 
 		private Point directionVector;
 
@@ -73,8 +34,6 @@ public class TwentyFortyEight {
 			return new Point(point.x - directionVector.x,
 					point.y - directionVector.y);
 		}
-
-		protected abstract Iterator<Point> traversalIterator(int width, int height);
 	}
 
 	private final int width;
